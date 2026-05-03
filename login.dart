@@ -1,211 +1,8 @@
-// import 'package:flutter/material.dart';
-// import 'signup.dart';
-// import 'home.dart';
-//
-// void main() {
-//   runApp(LoginPage());
-// }
-//
-// class LoginPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         backgroundColor: Colors.white,
-//         body: Container(
-//           padding: EdgeInsets.all(30),
-//           child: Column(
-//             children: [
-//
-//               Column(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-//                   Icon(Icons.favorite, color: Colors.pink, size: 40),
-//                   SizedBox(height: 20),
-//                   Text(
-//                     "Welcome Back",
-//                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-//                   ),
-//                   Text(
-//                     "log in to continue using our app",
-//                     style: TextStyle(color: Colors.grey, fontSize: 16),
-//                   ),
-//                   SizedBox(height: 30),
-//                   TextField(
-//                     decoration: InputDecoration(
-//                       hintText: "Email address",
-//                       icon: Icon(Icons.email),
-//                       border: OutlineInputBorder(
-//                         borderRadius: BorderRadius.circular(15),
-//                       ),
-//                     ),
-//                   ),
-//                   SizedBox(height: 20),
-//                   TextField(
-//                     obscureText: true,
-//                     decoration: InputDecoration(
-//
-//                       hintText: "Password",
-//                       icon: Icon(Icons.lock),
-//                       border: OutlineInputBorder(
-//                         borderRadius: BorderRadius.circular(15),
-//                       ),
-//                     ),
-//                   ),
-//
-//                   Row(
-//                     mainAxisAlignment: MainAxisAlignment.end,
-//                     children: [
-//                       Text(
-//                         "Forgot Password?",
-//                         style: TextStyle(color: Colors.pink),
-//                       ),
-//                     ],
-//                   ),
-//                   SizedBox(height: 20),
-//
-//                   ElevatedButton(
-//                     onPressed: () {
-//                       Navigator.push(
-//                         context,
-//                         MaterialPageRoute(builder: (context) =>  home()),
-//                       );
-//                     },
-//                     style: ElevatedButton.styleFrom(
-//                       backgroundColor: Colors.pink,
-//                       padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-//                     ),
-//                     child: Text("sign in",
-//                       style: TextStyle(color: Colors.white, fontSize: 20),
-//                     ),
-//                   ),
-//                   SizedBox(height: 10),
-//
-//                   Row(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-//                       Text("Or continue with")
-//                     ],
-//                   ),
-//                   SizedBox(height: 20),
-//
-//                   Row(
-//                     children: [
-//                       SizedBox(width: 50),
-//
-//                       Column(
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//
-//                         children: [
-//
-//                           OutlinedButton(onPressed: () {}, child:Container(
-//                             width: 60,
-//                             height: 50,
-//                             child: Column(
-//                                          children: [
-//                                            ShaderMask(
-//                                       shaderCallback: (Rect bounds) {
-//                                               return LinearGradient(
-//                                                 colors: [
-//                                                   Colors.white,
-//                                                   Colors.white,
-//                                                    Colors.red,
-//                                                    Colors.yellow,
-//                                                    Colors.green,
-//                                                     Colors.blue,
-//                                                      Colors.white,
-//                                                        Colors.white,
-//
-//                                                             ],
-//                                                    begin: Alignment.topLeft,
-//                                                  end: Alignment.bottomRight,
-//                                                  ).createShader(bounds);
-//                                      },
-//                                   child: Icon(
-//                                     Icons.g_mobiledata,
-//                                     size: 30,
-//                                     color: Colors.white,
-//                                   ),
-//                                 ),
-//
-//                                 Text("Google"),
-//                               ],
-//                             ),
-//                           )
-//                           ),
-//                         ],
-//                       ),
-//                       SizedBox(width: 20),
-//                       Column(
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: [
-//                           OutlinedButton(
-//                             onPressed: () {},
-//                             child: Container(
-//                               height: 50,
-//                               child: Column(
-//                                 children: [
-//                                   Icon(Icons.facebook),
-//                                   SizedBox(width: 10),
-//                                   Text("Facebook"),
-//                                 ],
-//                               ),
-//                             ),
-//
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//
-//                   ),
-//                   SizedBox(height: 20),
-//
-//                   Row(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-//                       const Text("Don't have an account? "),
-//                       GestureDetector(
-//                         onTap: () {
-//                           Navigator.push(
-//                             context,
-//                             MaterialPageRoute(builder: (context) =>  SignUpApp()),
-//                           );
-//                         },
-//                         child: const Text(
-//                           "Sign Up",
-//                           style: TextStyle(
-//                             color: Colors.pink,
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                       ),
-//                     ],
-//                   )
-//                 ],
-//               ),
-//
-//
-//               // Container(
-//               //     child: ElevatedButton(
-//               //         onPressed: (){
-//               //           Navigator.pop(context);
-//               //         }
-//               //         , child: Text("Log in")
-//               //     )
-//               //
-//               // ) ,
-//             ],
-//
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 import 'package:flutter/material.dart';
-import 'signup.dart';
-import 'home.dart';
+import '../user/signup.dart';
+import '../user/home.dart';
+import 'package:project/owner/owner_home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -284,7 +81,6 @@ class _LoginPageState extends State<LoginPage> {
                   if (!emailRegex.hasMatch(value)) {
                     return "Enter a valid email";
                   }
-
                   return null;
                 },
               ),
@@ -343,10 +139,19 @@ class _LoginPageState extends State<LoginPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => home()),
-                      );
+
+                      if (emailController.text.trim() == "owner@owner.com") {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => home()),
+                        );
+                      }
+
                     }
                   },
                   style: ElevatedButton.styleFrom(
