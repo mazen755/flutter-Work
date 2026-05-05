@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../user/signup.dart';
 import '../user/home.dart';
 import 'package:project/owner/owner_home.dart';
+import 'package:project/admin/home/homeAdmin.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -145,7 +146,14 @@ class _LoginPageState extends State<LoginPage> {
                           context,
                           MaterialPageRoute(builder: (context) => HomeScreen()),
                         );
-                      } else {
+                     }
+                      else if (emailController.text.trim() == "Admin@admin.com"){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Adminhome()),
+                        );
+                    }
+                      else {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => home()),
